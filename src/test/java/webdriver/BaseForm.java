@@ -114,7 +114,7 @@ public abstract class BaseForm extends BaseEntity {
 	public void refreshAndWait(){
 		info("Refreshing and waiting for page to load");
 		browser.getDriver().navigate().refresh();
-		//browser.waitForPageToLoad();
+		browser.waitForPageToLoad();
 	}
 
 

@@ -205,7 +205,8 @@
 				<configuration>
 					
 					<suiteXmlFiles>
-						<suiteXmlFile>src/test/resources/TestSuite.xml</suiteXmlFile>
+						<suiteXmlFile>src/test/resources/NewTweetTest.xml</suiteXmlFile>
+						<suiteXmlFile>src/test/resources/VerifyLoginLogoutProcedure.xml</suiteXmlFile>
 					</suiteXmlFiles>
 <!--					<groups>mygroup</groups>-->
 					<properties>

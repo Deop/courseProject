@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Verify Login Logout Procedure Test" verbose="1">
+
+
+    <test name="Verify Login Logout Procedure Test" preserve-order="true">
+        <parameter name="Login"  value="qatester11593@gmail.com"/>
+        <parameter name="Password"  value="twAt09#"/>
+        <parameter name="IncorrectPassword"  value="twAt09#1"/>
+        <classes>
+            <class name="twitter.tests.VerifyLoginLogoutProcedureTest" />
+        </classes>
+    </test>
+
+
+</suite>

@@ -175,7 +175,7 @@ public abstract class BaseElement extends BaseEntity {
 	 * Wait for element is present.
 	 */
 	public void waitForIsElementPresent() {
-		
+
 		isPresent(Integer.valueOf(browser.getTimeoutForCondition()));
 		// troubleshooting if element is not found
 		if (!element.isDisplayed()) {//Browser.getTroubleShooting

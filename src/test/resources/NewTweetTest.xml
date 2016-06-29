@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="New Tweet Test" verbose="1">
+
+	<test name="New Tweet Test" preserve-order="true">
+		<parameter name="Login"  value="qatester11593@gmail.com"/>
+		<parameter name="Password"  value="twAt09#"/>
+		<parameter name="TweetMessage"  value="Test tweet"/>
+		<classes>
+ 			<class name="twitter.tests.NewTweetTest" />
+        </classes>
+	</test>
+
+
+</suite>

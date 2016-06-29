@@ -12,6 +12,10 @@ public class HomeForm extends BaseForm {
     private Label lblTweetCounter = new Label(By.xpath("//a[contains(@data-element-term, 'tweet_stats')]/span[contains(@class, 'statValue')]"), "Tweet counter");
     private Button btnNewTweet = new Button(By.id("global-new-tweet-button"), "New Tweet");
     private Label lblTweetBlock = new Label(By.xpath("//div[@class='stream']/ol[contains(@class, 'stream-items')]"), "Tweets");
+    private Label lblTweetPosted = new Label(By.xpath("//div[@id='message-drawer']/div"), "Tweet Posted");
+    private Button btnProfileIcon = new Button(By.id("user-dropdown-toggle"), "Profile Icon");
+    private Label lblUserDropdown = new Label(By.id("user-dropdown"), "User Dropdown menu");
+    private Button btnLogout = new Button(By.id("signout-button"), "Sign Out");
 
     public HomeForm() {
         super(By.xpath("//div[@class='stream']/ol[contains(@class, 'stream-items')]"), "Tweets");
@@ -33,5 +37,21 @@ public class HomeForm extends BaseForm {
 
     public void waitForTweetsBlock(){
         lblTweetBlock.waitForIsElementPresent();
+    }
+
+    public void waitForTweetPostedMessage(){
+        lblTweetPosted.waitForIsElementPresent();
+    }
+
+    public void clickProfileIcon(){
+        btnProfileIcon.click();
+    }
+
+    public void waitForUserDropDown(){
+        lblUserDropdown.waitForIsElementPresent();
+    }
+
+    public void logout(){
+        btnLogout.click();
     }
 }

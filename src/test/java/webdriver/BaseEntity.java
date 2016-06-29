@@ -245,14 +245,6 @@ public abstract class BaseEntity {
 		logger.info(String.format("----==[ %1$s ]==----", info));
 	}
 
-	protected void waitSeconds(long seconds) {
-		try {
-			Thread.sleep(seconds*1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-
 	
 	
 

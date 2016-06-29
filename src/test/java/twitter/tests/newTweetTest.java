@@ -1,21 +1,34 @@
 package twitter.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import twitter.forms.HomeForm;
 import twitter.forms.MainForm;
 import twitter.forms.NewTweetForm;
 import webdriver.BaseTest;
 
-public class newTweetTest extends BaseTest {
+public class NewTweetTest extends BaseTest {
 
     private String initialTweetsNumber;
+    private String login;
+    private String password;
+    private String tweetMessage;
+
+    @BeforeTest
+    @Parameters({"Login", "Password", "TweetMessage"})
+    public void readParams(String login, String password, String tweetMessage){
+        this.login = login;
+        this.password = password;
+        this.tweetMessage = tweetMessage;
+    }
 
     public void runTest() {
         logger.step(1);
         MainForm mainPage = new MainForm();
 
         logger.step(2);
-        mainPage.login("qatester11593@gmail.com", "twAt09#");
+        mainPage.login(login, password);
         HomeForm homeForm = new HomeForm();
 
         logger.step(3);
@@ -27,9 +40,9 @@ public class newTweetTest extends BaseTest {
         NewTweetForm newTweetForm = new NewTweetForm();
 
         logger.step(5);
-        newTweetForm.enterMessage("test");
+        newTweetForm.enterMessage(tweetMessage);
         newTweetForm.sendTweet();
-        homeForm.waitForTweetsBlock();
+        homeForm.waitForTweetPostedMessage();
 
         logger.step(6);
         homeForm.refreshAndWait();
