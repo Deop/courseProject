@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.Assert;
@@ -104,20 +105,12 @@ public abstract class BaseForm extends BaseEntity {
 	}
 
 	/**
-	 * Find list of web elements
-	 * @param locator Locator
+	 * Refreshing the page and waiting for page to load
 	 */
-	public List<WebElement> findElements(By locator){
-		return browser.getDriver().findElements(locator);
-	}
-
 	public void refreshAndWait(){
 		info("Refreshing and waiting for page to load");
 		browser.getDriver().navigate().refresh();
 		browser.waitForPageToLoad();
 	}
-
-
-	
 
 }

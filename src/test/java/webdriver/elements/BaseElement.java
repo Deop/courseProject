@@ -16,6 +16,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -305,8 +306,23 @@ public abstract class BaseElement extends BaseEntity {
 		return false;
 	}
 
-	
-	
-	
+	/**
+	 * Click on the item and wait for page to load.
+	 *
+	 */
+	public void clickAndWait(){
+		this.click();
+		browser.waitForPageToLoad();
 	}
+
+	/**
+	 * Find list of web elements
+	 *
+	 */
+	public List<WebElement> findElements(){
+		waitForIsElementPresent();
+		return browser.getDriver().findElements(locator);
+	}
+	
+}
 

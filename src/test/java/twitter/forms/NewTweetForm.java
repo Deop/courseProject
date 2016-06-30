@@ -21,7 +21,7 @@ public class NewTweetForm extends BaseForm {
     }
 
     public void sendTweet(){
-        btnSendTweet.click();
+        btnSendTweet.clickAndWait();
     }
 
     public String generateTweetMessage(String message){

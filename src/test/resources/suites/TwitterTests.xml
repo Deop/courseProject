@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Twitter Tests" verbose="1">
+	<parameter name="Login"  value="qatester11593@gmail.com"/>
+	<parameter name="Password"  value="twAt09#"/>
+
+	<test name="Verify Login Logout Procedure Test" preserve-order="true">
+		<parameter name="IncorrectPassword"  value="twAt09#1"/>
+		<classes>
+			<class name="twitter.tests.VerifyLoginLogoutProcedureTest" />
+		</classes>
+	</test>
+
+	<test name="New Tweet Test" preserve-order="true">
+		<parameter name="TweetMessage"  value="Test tweet"/>
+		<classes>
+ 			<class name="twitter.tests.NewTweetTest" />
+        </classes>
+	</test>
+
+	<test name="New Follow Test" preserve-order="true">
+		<parameter name="UserNumber"  value="1"/>
+		<classes>
+			<class name="twitter.tests.NewFollowTest" />
+		</classes>
+	</test>
+
+</suite>

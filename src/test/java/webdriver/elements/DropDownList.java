@@ -28,7 +28,7 @@ public class DropDownList extends BaseElement {
      * Selecting an option in dropdown by visible text
      * @param option visible text of the option
      */
-    public void selectOptionByVisibleText(String option){
+    public void selectByText(String option){
         waitForIsElementPresent();
         if (browser.getDriver() instanceof JavascriptExecutor) {
             ((JavascriptExecutor)browser.getDriver()).executeScript("arguments[0].style.border='3px solid red'", element);
